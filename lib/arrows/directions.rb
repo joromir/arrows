@@ -1,9 +1,9 @@
 module Arrows
   class Directions
-    attr_reader :string
+    attr_reader :sequence
 
-    def initialize(string)
-      @string = string
+    def initialize(sequence)
+      @sequence = sequence
     end
   end
 end
