@@ -8,4 +8,18 @@ Converts a given string, composed of the follwing four characters (arrows) to an
 
 ## Implementation
 
-TODO: Write a more verbose readme
+The project is composed of two classes:
+- `Arrows::Coordinates`
+- `Arrows::Directions`
+
+`Arrows::Directions` is responsible for calculating the aforementioned tuple as per the arrow directions. Consider the excerpt below:
+
+```ruby
+directions = Arrows::Directions.new('>>><<<^^^^^^^^vv')
+
+coordinates = directions.to_coordinates # => #<Arrows::Coordinates:0x007fe76913d8e8 @abscissa=0, @ordinate=6>
+
+coordinates.abscisa # => 0
+coordinates.ordinate # => 6
+
+```
