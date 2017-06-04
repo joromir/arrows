@@ -9,6 +9,28 @@ RSpec.describe Arrows::Directions do
     end
   end
 
+  describe '#==' do
+    context 'when directions have the same tuple' do
+      subject { described_class.new('>>>>>>') }
+
+      let(:other_subject) { described_class.new('>>>>>>><') }
+
+      it 'returns true' do
+        expect(subject).to eq other_subject
+      end
+    end
+
+    context 'when directions have distinct tuples' do
+      subject { described_class.new('>>>>>>') }
+
+      let(:other_subject) { described_class.new('>>>>>>><^^') }
+
+      it 'returns false' do
+        expect(subject).to_not eq other_subject
+      end
+    end
+  end
+
   describe '#to_s' do
     context 'when sequence is "<<>^^^^^vv"' do
       subject { described_class.new('<<>^^^^^vv') }

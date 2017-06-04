@@ -17,6 +17,13 @@ module Arrows
       to_a.reduce(coordinates) { |acc, elem| acc + passport[elem] }
     end
 
+    def ==(other)
+      reduced_self  = BuildDirections.new(to_coordinates).to_s
+      reduced_other = BuildDirections.new(other.to_coordinates).to_s
+
+      reduced_self == reduced_other
+    end
+
     private
 
     def passport
