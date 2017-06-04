@@ -5,5 +5,7 @@ module Arrows
     def initialize(sequence)
       @sequence = sequence
     end
+
+    alias to_s sequence
   end
 end
