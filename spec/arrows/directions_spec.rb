@@ -32,14 +32,6 @@ RSpec.describe Arrows::Directions do
       expect(subject).to respond_to(:to_coordinates)
     end
 
-    it 'holds the value of 0 for ordinate initially' do
-      expect(subject.ordinate).to eq 0
-    end
-
-    it 'holds the value of 0 for abscissa initially' do
-      expect(subject.abscissa).to eq 0
-    end
-
     context 'when sequence is ">"' do
       let(:sequence) { '>' }
 

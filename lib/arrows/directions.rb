@@ -1,11 +1,10 @@
 module Arrows
   class Directions
-    attr_reader :sequence, :abscissa, :ordinate
+    attr_reader :sequence, :coordinates
 
     def initialize(sequence)
       @sequence = sequence
-      @abscissa = 0
-      @ordinate = 0
+      @coordinates = Coordinates.new
     end
 
     alias to_s sequence
@@ -17,14 +16,14 @@ module Arrows
     def to_coordinates
       to_a.each do |arrow|
         case arrow
-        when '>' then @abscissa = abscissa + 1
-        when '<' then @abscissa = abscissa - 1
-        when '^' then @ordinate = ordinate + 1
-        when 'v' then @ordinate = ordinate - 1
+        when '>' then coordinates.right
+        when '<' then coordinates.left
+        when '^' then coordinates.up
+        when 'v' then coordinates.down
         end
       end
 
-      [abscissa, ordinate]
+      coordinates.to_a
     end
   end
 end
