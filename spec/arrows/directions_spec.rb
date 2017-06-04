@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 RSpec.describe Arrows::Directions do
+  describe '#sequence' do
+    subject { described_class.new('>') }
+
+    it 'responds to sequence' do
+      expect(subject).to respond_to(:sequence)
+    end
+  end
+
   describe '#to_s' do
     context 'when sequence is "<<>^^^^^vv"' do
       subject { described_class.new('<<>^^^^^vv') }
