@@ -2,29 +2,24 @@ module Arrows
   class Coordinates
     attr_reader :abscissa, :ordinate
 
-    def initialize(x = 0, y = 0)
-      @abscissa = x
-      @ordinate = y
+    def initialize(abscissa = 0, ordinate = 0)
+      @abscissa = abscissa
+      @ordinate = ordinate
     end
 
     def to_a
       [abscissa, ordinate]
     end
 
-    def right
-      @abscissa = abscissa + 1
+    def ==(other)
+      abscissa == other.abscissa && ordinate == other.ordinate
     end
 
-    def left
-      @abscissa = abscissa - 1
-    end
+    def +(other)
+      new_abscissa = abscissa + other.abscissa
+      new_ordinate = ordinate + other.ordinate
 
-    def up
-      @ordinate = ordinate + 1
-    end
-
-    def down
-      @ordinate = ordinate - 1
+      Coordinates.new(new_abscissa, new_ordinate)
     end
   end
 end

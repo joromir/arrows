@@ -36,7 +36,7 @@ RSpec.describe Arrows::Directions do
       let(:sequence) { '>' }
 
       it 'evaluates to [1, 0]' do
-        expect(subject.to_coordinates).to eq [1, 0]
+        expect(subject.to_coordinates).to eq Arrows::Coordinates.new(1, 0)
       end
     end
 
@@ -44,7 +44,7 @@ RSpec.describe Arrows::Directions do
       let(:sequence) { '<' }
 
       it 'evaluates to [-1, 0]' do
-        expect(subject.to_coordinates).to eq [-1, 0]
+        expect(subject.to_coordinates).to eq Arrows::Coordinates.new(-1, 0)
       end
     end
 
@@ -52,7 +52,7 @@ RSpec.describe Arrows::Directions do
       let(:sequence) { '^' }
 
       it 'evaluates to [0, 1]' do
-        expect(subject.to_coordinates).to eq [0, 1]
+        expect(subject.to_coordinates).to eq Arrows::Coordinates.new(0, 1)
       end
     end
 
@@ -60,7 +60,7 @@ RSpec.describe Arrows::Directions do
       let(:sequence) { 'v' }
 
       it 'evaluates to [0, -1]' do
-        expect(subject.to_coordinates).to eq [0, -1]
+        expect(subject.to_coordinates).to eq Arrows::Coordinates.new(0, -1)
       end
     end
 
@@ -68,7 +68,7 @@ RSpec.describe Arrows::Directions do
       let(:sequence) { '' }
 
       it 'evaluates to [0, 0]' do
-        expect(subject.to_coordinates).to eq [0, 0]
+        expect(subject.to_coordinates).to eq Arrows::Coordinates.new(0, 0)
       end
     end
 
@@ -76,7 +76,7 @@ RSpec.describe Arrows::Directions do
       let(:sequence) { '<<>^^^^^vv' }
 
       it 'evaluates to 1w321' do
-        expect(subject.to_coordinates).to eq [-1, 3]
+        expect(subject.to_coordinates).to eq Arrows::Coordinates.new(-1, 3)
       end
     end
   end

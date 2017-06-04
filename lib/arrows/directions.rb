@@ -14,16 +14,18 @@ module Arrows
     end
 
     def to_coordinates
-      to_a.each do |arrow|
-        case arrow
-        when '>' then coordinates.right
-        when '<' then coordinates.left
-        when '^' then coordinates.up
-        when 'v' then coordinates.down
-        end
-      end
+      to_a.reduce(coordinates) { |acc, elem| acc + passport[elem] }
+    end
 
-      coordinates.to_a
+    private
+
+    def passport
+      {
+        '>' => Coordinates.new(1, 0),
+        '<' => Coordinates.new(-1, 0),
+        '^' => Coordinates.new(0, 1),
+        'v' => Coordinates.new(0, -1)
+      }
     end
   end
 end
