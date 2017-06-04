@@ -8,7 +8,7 @@ Converts a given string, composed of the follwing four characters (arrows) to an
 
 ## Implementation
 
-The project is composed of two classes:
+The project is composed of the following classes:
 - `Arrows::Coordinates`
 - `Arrows::Directions`
 - `Arrows::BuildDirections`
@@ -20,7 +20,7 @@ directions = Arrows::Directions.new('>>><<<^^^^^^^^vv')
 
 coordinates = directions.to_coordinates # => #<Arrows::Coordinates:0x007fe76913d8e8 @abscissa=0, @ordinate=6>
 
-coordinates.abscisa # => 0
+coordinates.abscissa # => 0
 coordinates.ordinate # => 6
 
 ```
