@@ -10,8 +10,12 @@ module Arrows
 
     alias to_s sequence
 
+    def to_a
+      sequence.split('')
+    end
+
     def to_coordinates
-      sequence.split('').each do |arrow|
+      to_a.each do |arrow|
         case arrow
         when '>' then @abscissa = abscissa + 1
         when '<' then @abscissa = abscissa - 1
