@@ -79,5 +79,13 @@ RSpec.describe Arrows::Directions do
         expect(subject.to_coordinates).to eq [0, 0]
       end
     end
+
+    context 'when sequence is "<<>^^^^^vv"' do
+      let(:sequence) { '<<>^^^^^vv' }
+
+      it 'evaluates to 1w321' do
+        expect(subject.to_coordinates).to eq [-1, 3]
+      end
+    end
   end
 end
