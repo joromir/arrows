@@ -11,6 +11,7 @@ Converts a given string, composed of the follwing four characters (arrows) to an
 The project is composed of two classes:
 - `Arrows::Coordinates`
 - `Arrows::Directions`
+- `Arrows::BuildDirections`
 
 `Arrows::Directions` is responsible for calculating the aforementioned tuple as per the arrow directions. Consider the excerpt below:
 
@@ -22,4 +23,13 @@ coordinates = directions.to_coordinates # => #<Arrows::Coordinates:0x007fe76913d
 coordinates.abscisa # => 0
 coordinates.ordinate # => 6
 
+```
+
+A directions string could be build on the basis of a given `Arrows::Coordinates` instance. Simply invoke the class `Arrows::BuildDirections` with the desired input.
+
+```ruby
+pair = Arrows::Coordinates.new(3, -12)
+builder = Arrows::BuildDirections.new(pair)
+
+builder.to_s # => '>>>vvvvvvvvvvvv'
 ```
