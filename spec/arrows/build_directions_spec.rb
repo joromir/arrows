@@ -7,6 +7,22 @@ RSpec.describe Arrows::BuildDirections do
     end
   end
 
+  describe '#to_directions' do
+    subject { described_class.new(pair) }
+
+    context 'when pair is [-3, 12]' do
+      let(:pair) { Arrows::Coordinates.new(-3, 12) }
+
+      it 'returns an isntance of Arrows::Directions' do
+        expect(subject.to_directions).to be_an_instance_of(Arrows::Directions)
+      end
+
+      it 'holds the expected value' do
+        expect(subject.to_directions.sequence).to eq '<<<^^^^^^^^^^^^'
+      end
+    end
+  end
+
   describe '#to_s' do
     subject { described_class.new(pair) }
 

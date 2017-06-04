@@ -14,6 +14,10 @@ module Arrows
       sequence
     end
 
+    def to_directions
+      Directions.new(to_s)
+    end
+
     private
 
     def append_arrow(line, positive_arrow, negative_arrow)
